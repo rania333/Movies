@@ -1,7 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import {Link} from 'react-router-dom'
 
 export default function NavbarComponent() {
+    const selector = useSelector(state => state.favMovies);
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-info">
@@ -17,10 +20,14 @@ export default function NavbarComponent() {
                             <Link className="nav-link active" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/fav">Favourite</Link>
-                        </li>
-                        <li className="nav-item">
                             <Link className="nav-link" to="filter">Filter</Link>
+                        </li>
+                        <li className="nav-item position-relative">
+                            <Link className="nav-link" to="/fav">Favourite</Link>
+                            <span style={{margin: '-38% -5%'}} className=
+                            "position-absolute start-100 translate-middle badge rounded-pill bg-info">
+                                {selector.length}
+                            </span>
                         </li>
                     </ul>
                     <div className="d-flex">
