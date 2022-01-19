@@ -36,7 +36,7 @@ export default function Fav() {
                 </div>
                 )
             }): <h1 className='mx-auto my-5 text-info'>
-                You hadn't add any movie to favourites yet
+                You haven't add any movie to favourites yet
                 </h1>} 
             </div>
             </div>
